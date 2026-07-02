@@ -6,7 +6,7 @@
 
 - [学习笔记](/posts/)
 - [项目实践](/projects/)
-- [关于](/about/)
+- [关于](/guide/getting-started.html)
 
 ## 说明
 
