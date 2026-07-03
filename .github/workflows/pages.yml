@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18  # 或 24（根据项目需求）
           cache: 'npm'
       - name: Install dependencies
         run: npm install
@@ -23,5 +23,5 @@ jobs:
       - name: Deploy
         uses: actions/deploy-pages@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          path: 'docs/.vitepress/dist'
+          token: ${{ secrets.GITHUB_TOKEN }}  # 修正参数名：github_token → token
+          path: 'docs/.vitepress/dist'       # 确认构建输出路径（VitePress 默认位置）
