@@ -1,13 +1,23 @@
-# 个人博客
+---
+layout: home
 
-用于记录学习与项目相关内容。
+hero:
+  name: 我的技术博客
+  text: 记录学习与项目实践
+  tagline: 基于 VitePress 构建，部署在 GitHub Pages
+  actions:
+    - theme: brand
+      text: 开始阅读
+      link: /posts/build-blog-with-vitepress
+    - theme: alt
+      text: 关于我
+      link: /about
 
-## 文章分类
-
-- [学习笔记](/posts/)
-- [项目实践](/projects/)
-- [关于](/about/)
-
-## 说明
-
-本站基于 VitePress 构建，内容持续更新中。
+features:
+  - title: 学习笔记
+    details: 整理课程学习笔记与技术知识
+  - title: 项目实践
+    details: 记录小型项目的开发过程与经验
+  - title: 技术探索
+    details: 探索和尝试新的技术工具与方法
+---
