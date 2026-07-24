@@ -6,7 +6,7 @@ export default defineConfig({
   base: '/',
   ignoreDeadLinks: true,
   head: [
-    ['link', { rel: 'icon', href: '/favicon.svg' }]
+    ['link', { rel: 'icon', href: '/favicon.jpg' }]
   ],
   themeConfig: {
     nav: [
