@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { h, ref } from 'vue'
 import type { Theme } from 'vitepress'
+import './custom.css'
 
 export default {
   ...DefaultTheme,
