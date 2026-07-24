@@ -6,10 +6,10 @@ export default defineConfig({
   base: '/',
   ignoreDeadLinks: true,
   head: [
-    ['link', { rel: 'icon', href: '/favicon.jpg' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
   themeConfig: {
-    logo: '/favicon.jpg',
+    logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
       { text: '文章', link: '/posts/myFirstBlog' }
