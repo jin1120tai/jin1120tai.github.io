@@ -6,8 +6,7 @@ hero:
   text: 记录学习，分享成长
   tagline: 在这里记录我的技术学习和生活感悟
   image:
-    light: /b2.jpg
-    dark: /b2.jpg
+    src: /b2.jpg
     alt: Banner
   actions:
     - theme: brand
