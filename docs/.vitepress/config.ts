@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { logoBase64 } from './logo-base64'
 
 export default defineConfig({
-  title: '我的博客',
+  title: '金汐的博客',
   description: '我的个人博客',
   base: '/',
   ignoreDeadLinks: true,
