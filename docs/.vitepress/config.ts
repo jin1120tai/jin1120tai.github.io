@@ -10,6 +10,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: logoBase64 }]
   ],
   themeConfig: {
+    siteTitle: '金汐的博客',
     logo: logoBase64,
     nav: [
       { text: '首页', link: '/' },
