@@ -5,6 +5,9 @@ export default defineConfig({
   description: '我的个人博客',
   base: '/',
   ignoreDeadLinks: true,
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.svg' }]
+  ],
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
