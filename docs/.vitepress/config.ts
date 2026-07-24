@@ -9,6 +9,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.jpg' }]
   ],
   themeConfig: {
+    logo: '/favicon.jpg',
     nav: [
       { text: '首页', link: '/' },
       { text: '文章', link: '/posts/myFirstBlog' }
