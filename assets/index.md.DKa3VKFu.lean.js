@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as r,a3 as o}from"./chunks/framework.BveOjhN0.js";const m=JSON.parse('{"title":"欢迎来到我的博客","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),i={name:"index.md"};function s(l,a,n,d,c,h){return t(),r("div",null,[...a[0]||(a[0]=[o("",7)])])}const p=e(i,[["render",s]]);export{m as __pageData,p as default};
