@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as r,a0 as i}from"./chunks/framework.jwovEGr5.js";const u=JSON.parse('{"title":"欢迎来到我的博客","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),o={name:"index.md"};function n(s,a,l,d,_,c){return t(),r("div",null,[...a[0]||(a[0]=[i("",5)])])}const m=e(o,[["render",n]]);export{u as __pageData,m as default};
