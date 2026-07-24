@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: '我的博客',
   description: '我的个人博客',
+  base: '/',
   ignoreDeadLinks: true,
   themeConfig: {
     nav: [
