@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
-import { h, ref, onMounted } from 'vue'
+import { h, ref } from 'vue'
 import type { Theme } from 'vitepress'
 
 export default {
@@ -12,15 +12,7 @@ export default {
 } as Theme
 
 function ShareButtons() {
-  const isVisible = ref(false)
-  const qrCodeUrl = ref('')
-  const mounted = ref(false)
-
-  onMounted(() => {
-    mounted.value = true
-  })
-
-  if (!mounted.value) return null
+  if (typeof window === 'undefined') return null
 
   const shareUrls = [
     {
@@ -56,45 +48,47 @@ function ShareButtons() {
         url: window.location.href
       })
     } else if (item.action === 'wechat') {
-      qrCodeUrl.value = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(window.location.href)
-      isVisible.value = true
+      showWechatModal()
     } else if (item.url) {
       window.open(item.url, '_blank')
     }
   }
 
-  const closeModal = () => {
-    isVisible.value = false
+  const showWechatModal = () => {
+    const url = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(window.location.href)
+    const modal = document.createElement('div')
+    modal.className = 'qr-modal'
+    modal.innerHTML = `
+      <div class="qr-content">
+        <button class="qr-close">×</button>
+        <h3 class="qr-title">微信扫码分享</h3>
+        <img class="qr-image" src="${url}" alt="二维码">
+        <p class="qr-desc">打开微信扫一扫，扫描二维码分享文章</p>
+      </div>
+    `
+    const closeBtn = modal.querySelector('.qr-close') as HTMLElement
+    closeBtn.addEventListener('click', () => modal.remove())
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.remove()
+    })
+    document.body.appendChild(modal)
   }
 
-  return h('div', { class: 'share-container' }, [
-    h('div', { class: 'share-buttons' }, [
-      h('span', { class: 'share-label' }, '分享文章'),
-      h('div', { class: 'share-icons' },
-        shareUrls.map(item =>
-          h('button', {
-            class: 'share-btn',
-            title: item.name,
-            onClick: () => handleShare(item)
-          }, [
-            h('span', { class: 'share-icon', innerHTML: item.icon }),
-            h('span', { class: 'share-text' }, item.name)
-          ])
-        )
+  return h('div', { class: 'share-buttons' }, [
+    h('span', { class: 'share-label' }, '分享文章'),
+    h('div', { class: 'share-icons' },
+      shareUrls.map(item =>
+        h('button', {
+          class: 'share-btn',
+          title: item.name,
+          onClick: () => handleShare(item)
+        }, [
+          h('span', { class: 'share-icon', innerHTML: item.icon }),
+          h('span', { class: 'share-text' }, item.name)
+        ])
       )
-    ]),
-    isVisible.value ? h('div', { class: 'qr-modal', onClick: closeModal }, [
-      h('div', { class: 'qr-content', onClick: (e: Event) => e.stopPropagation() }, [
-        h('button', { class: 'qr-close', onClick: closeModal }, '×'),
-        h('h3', { class: 'qr-title' }, '微信扫码分享'),
-        h('img', { class: 'qr-image', src: qrCodeUrl.value, alt: '二维码' }),
-        h('p', { class: 'qr-desc' }, '打开微信扫一扫，扫描二维码分享文章')
-      ])
-    ]) : null,
+    ),
     h('style', { scoped: true }, `
-      .share-container {
-        position: relative;
-      }
       .share-buttons {
         display: flex;
         align-items: center;
@@ -149,6 +143,7 @@ function ShareButtons() {
         z-index: 1000;
       }
       .qr-content {
+        position: relative;
         background: #fff;
         padding: 24px;
         border-radius: 12px;
