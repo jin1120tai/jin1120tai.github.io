@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: 我的博客
+  name: 金汐的博客
   text: 记录学习，分享成长
   tagline: 在这里记录我的技术学习和生活感悟
   image:
