@@ -1,9 +1,20 @@
-# 欢迎来到我的博客
+---
+layout: home
 
-> 🚀 记录学习，分享成长
-> 
-> 在这里记录我的技术学习和生活感悟
-
+hero:
+  name: 我的博客
+  text: 记录学习，分享成长
+  tagline: 在这里记录我的技术学习和生活感悟
+  image:
+    src: /banner.png
+    alt: Banner
+  actions:
+    - theme: brand
+      text: 开始阅读
+      link: /posts/myFirstBlog
+    - theme: alt
+      text: GitHub
+      link: https://github.com/jin1120tai
 ---
 
 ## 📝 文章列表
