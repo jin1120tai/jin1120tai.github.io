@@ -2,6 +2,7 @@
 
 ## 文章列表
 
+- [人工智能辅修过半总结](/posts/ai-minor-semester-summary)
 - [我的第一篇博客](/posts/myFirstBlog)
 
 ## 关于
