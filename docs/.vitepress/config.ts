@@ -8,13 +8,14 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '我的第一篇博客', link: '/posts/myFirstBlog' }
+      { text: '文章', link: '/posts/myFirstBlog' }
     ],
     sidebar: [
       {
         text: '文章',
         items: [
-          { text: '我的第一篇博客', link: '/posts/myFirstBlog' }
+          { text: '我的第一篇博客', link: '/posts/myFirstBlog' },
+          { text: '人工智能辅修过半总结', link: '/posts/ai-minor-semester-summary' }
         ]
       }
     ]
