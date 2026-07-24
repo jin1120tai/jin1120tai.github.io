@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { logoBase64 } from './logo-base64'
 
 export default defineConfig({
   title: '我的博客',
@@ -6,10 +7,10 @@ export default defineConfig({
   base: '/',
   ignoreDeadLinks: true,
   head: [
-    ['link', { rel: 'icon', href: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iIzNiODJmNiIvPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMzI0NjU3Ii8+PHRleHQgeD0iNTAiIHk9IjYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDAiIGZpbGw9InJlZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SlQ8L3RleHQ+PC9zdmc+' }]
+    ['link', { rel: 'icon', href: logoBase64 }]
   ],
   themeConfig: {
-    logo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iIzNiODJmNiIvPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMzI0NjU3Ii8+PHRleHQgeD0iNTAiIHk9IjYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDAiIGZpbGw9InJlZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SlQ8L3RleHQ+PC9zdmc+',
+    logo: logoBase64,
     nav: [
       { text: '首页', link: '/' },
       { text: '文章', link: '/posts/myFirstBlog' }
@@ -22,6 +23,30 @@ export default defineConfig({
           { text: '人工智能辅修过半总结', link: '/posts/ai-minor-semester-summary' }
         ]
       }
-    ]
+    ],
+    outline: {
+      level: [2, 3],
+      label: '目录'
+    },
+    search: {
+      provider: 'local'
+    }
+  },
+  comment: {
+    provider: 'giscus',
+    options: {
+      repo: 'jin1120tai/jin1120tai.github.io',
+      repoId: 'R_kgDOKn4a8Q',
+      category: 'Comments',
+      categoryId: 'DIC_kwDOKn4a8c4C0f6k',
+      mapping: 'pathname',
+      strict: '0',
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      inputPosition: 'bottom',
+      theme: 'light',
+      lang: 'zh-CN',
+      loading: 'lazy'
+    }
   }
 })
