@@ -5,9 +5,12 @@ export default defineConfig({
   title: '金汐的博客',
   description: '我的个人博客',
   base: '/',
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: false,
   head: [
-    ['link', { rel: 'icon', href: logoBase64 }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }]
   ],
   themeConfig: {
     siteTitle: '金汐的博客',
