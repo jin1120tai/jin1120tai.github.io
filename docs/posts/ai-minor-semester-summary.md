@@ -2,6 +2,13 @@
 date: 2026-07-24
 tags: [学习总结]
 description: 人工智能辅修专业小学期过半的学习回顾，涵盖机器学习、计算机视觉与机器人控制三门课程的体验与感悟。
+head:
+  - - meta
+    - property: og:description
+      content: 人工智能辅修专业小学期过半的学习回顾，涵盖机器学习、计算机视觉与机器人控制三门课程的体验与感悟。
+  - - meta
+    - property: og:title
+      content: 人工智能辅修过半总结
 ---
 
 # 人工智能辅修过半总结

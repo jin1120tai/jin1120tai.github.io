@@ -3,14 +3,25 @@ import { logoBase64 } from './logo-base64'
 
 export default defineConfig({
   title: '金汐的博客',
-  description: '我的个人博客',
+  description: '记录学习，分享成长',
   base: '/',
   ignoreDeadLinks: false,
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
-    ['link', { rel: 'manifest', href: '/site.webmanifest' }]
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+    ['meta', { name: 'author', content: '金汐' }],
+    ['meta', { property: 'og:site_name', content: '金汐的博客' }],
+    ['meta', { property: 'og:title', content: '金汐的博客' }],
+    ['meta', { property: 'og:description', content: '记录学习，分享成长' }],
+    ['meta', { property: 'og:image', content: 'https://jin1120tai.github.io/b2.jpg' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: 'https://jin1120tai.github.io/' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: '金汐的博客' }],
+    ['meta', { name: 'twitter:description', content: '记录学习，分享成长' }],
+    ['meta', { name: 'twitter:image', content: 'https://jin1120tai.github.io/b2.jpg' }]
   ],
   themeConfig: {
     siteTitle: '金汐的博客',

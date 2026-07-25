@@ -2,6 +2,13 @@
 date: 2026-06-30
 tags: [课程作业]
 description: 记录使用 VitePress 搭建个人博客的过程，从仓库创建到自动部署的完整实践。
+head:
+  - - meta
+    - property: og:description
+      content: 记录使用 VitePress 搭建个人博客的过程，从仓库创建到自动部署的完整实践。
+  - - meta
+    - property: og:title
+      content: 我的第一个博客
 ---
 
 # 我的第一个博客
