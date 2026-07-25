@@ -2,7 +2,6 @@
 
 /* 桌面端 (960px+) */
 @media (min-width: 960px) {
-  /* 外层图片区域 - 消除负margin，让它占满右侧列 */
   .VPHero .image {
     margin: 0 !important;
     max-width: none !important;
@@ -10,7 +9,6 @@
     flex: 1 !important;
   }
 
-  /* 图片容器 - 取消transform偏移，占满外层 */
   .VPHero .image-container {
     width: 100% !important;
     height: 100% !important;
@@ -18,7 +16,6 @@
     border-radius: 0 !important;
   }
 
-  /* 实际图片元素 - 取消VitePress默认的absolute定位和缩放 */
   .VPHero .image-src {
     position: static !important;
     max-width: 100% !important;
@@ -30,7 +27,6 @@
     display: block !important;
   }
 
-  /* 实际img标签 */
   .VPHero .image-src img {
     width: 100% !important;
     height: auto !important;
@@ -40,7 +36,6 @@
     display: block !important;
   }
 
-  /* 隐藏圆形背景装饰 */
   .VPHero .image-bg {
     display: none !important;
   }
@@ -49,4 +44,116 @@
 /* 移动端也确保图片宽度填满 */
 .VPHero .image {
   width: 100%;
+}
+
+/* ========== 分享按钮 - 亮色/暗色自适应 ========== */
+
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid var(--vp-c-divider);
+  margin-top: 24px;
+}
+
+.share-label {
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+  font-weight: 500;
+}
+
+.share-icons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg-soft);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--vp-c-text-1);
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.share-btn:hover {
+  background: var(--vp-c-bg-mute);
+  border-color: var(--vp-c-indigo-1);
+}
+
+.share-icon {
+  font-size: 16px;
+}
+
+.share-text {
+  font-size: 13px;
+}
+
+/* ========== 微信二维码弹窗 - 亮色/暗色自适应 ========== */
+
+.qr-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.qr-content {
+  position: relative;
+  background: var(--vp-c-bg);
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.qr-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--vp-c-bg-soft);
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  color: var(--vp-c-text-1);
+}
+
+.qr-close:hover {
+  background: var(--vp-c-bg-mute);
+}
+
+.qr-title {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  color: var(--vp-c-text-1);
+}
+
+.qr-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.qr-desc {
+  margin: 0;
+  font-size: 14px;
+  color: var(--vp-c-text-2);
 }
