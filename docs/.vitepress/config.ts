@@ -17,7 +17,8 @@ export default defineConfig({
     logo: logoBase64,
     nav: [
       { text: '首页', link: '/' },
-      { text: '文章', link: '/posts/myFirstBlog' }
+      { text: '文章', link: '/posts/' },
+      { text: '关于', link: '/about' }
     ],
     sidebar: [
       {
@@ -34,23 +35,6 @@ export default defineConfig({
     },
     search: {
       provider: 'local'
-    }
-  },
-  comment: {
-    provider: 'giscus',
-    options: {
-      repo: 'jin1120tai/jin1120tai.github.io',
-      repoId: 'R_kgDOKn4a8Q',
-      category: 'Comments',
-      categoryId: 'DIC_kwDOKn4a8c4C0f6k',
-      mapping: 'pathname',
-      strict: '0',
-      reactionsEnabled: '1',
-      emitMetadata: '0',
-      inputPosition: 'bottom',
-      theme: 'light',
-      lang: 'zh-CN',
-      loading: 'lazy'
     }
   }
 })

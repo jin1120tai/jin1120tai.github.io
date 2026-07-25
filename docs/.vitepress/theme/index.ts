@@ -1,14 +1,20 @@
 import DefaultTheme from 'vitepress/theme'
-import { h, ref } from 'vue'
+import { h } from 'vue'
 import type { Theme } from 'vitepress'
+import GiscusComments from './GiscusComments.vue'
+import NotFound from './NotFound.vue'
 import './custom.css'
 
 export default {
   ...DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'doc-footer-before': () => h(ShareButtons)
+      'doc-footer-before': () => h(ShareButtons),
+      'doc-after': () => h(GiscusComments)
     })
+  },
+  enhanceApp({ app }) {
+    app.component('NotFound', NotFound)
   }
 } as Theme
 
