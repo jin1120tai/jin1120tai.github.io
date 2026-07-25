@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
+import { useRoute } from 'vitepress'
 import type { Theme } from 'vitepress'
 import GiscusComments from './GiscusComments.vue'
 import NotFound from './NotFound.vue'
@@ -8,8 +9,13 @@ import './custom.css'
 export default {
   ...DefaultTheme,
   Layout() {
+    const route = useRoute()
+    const isPostPage = route.path.startsWith('/posts/') &&
+      route.path !== '/posts/' &&
+      route.path !== '/posts/index.html'
+
     return h(DefaultTheme.Layout, null, {
-      'doc-footer-before': () => h(ShareButtons),
+      'doc-footer-before': () => isPostPage ? h(ShareButtons) : null,
       'doc-after': () => h(GiscusComments)
     })
   },

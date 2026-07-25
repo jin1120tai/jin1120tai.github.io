@@ -41,9 +41,11 @@
   }
 }
 
-/* 移动端也确保图片宽度填满 */
-.VPHero .image {
-  width: 100%;
+/* 移动端：隐藏 hero 图片，让文字更突出 */
+@media (max-width: 959px) {
+  .VPHero .image {
+    display: none !important;
+  }
 }
 
 /* ========== 分享按钮 - 亮色/暗色自适应 ========== */

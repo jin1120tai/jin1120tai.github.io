@@ -11,17 +11,20 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /posts/myFirstBlog
+      link: /posts/
     - theme: alt
       text: GitHub
       link: https://github.com/jin1120tai
 ---
 
-## 📝 文章列表
+## 📝 最新文章
 
-- [人工智能辅修过半总结](/posts/ai-minor-semester-summary)
-- [我的第一篇博客](/posts/myFirstBlog)
+- **2026-07-24** [人工智能辅修过半总结](/posts/ai-minor-semester-summary) · `学习总结`
+
+- **2026-06-30** [我的第一篇博客](/posts/myFirstBlog) · `课程作业`
 
 ## 关于
 
-本站基于 VitePress 构建，使用 GitHub Actions 自动部署到 GitHub Pages。
+我是金汐，一名热爱技术与学习的在校大学生。
+
+这个博客是我记录学习过程、分享技术实践的地方。内容涵盖课程笔记、实验记录以及项目开发心得。

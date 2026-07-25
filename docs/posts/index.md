@@ -1,5 +1,7 @@
 ---
 title: 文章归档
+prev: false
+next: false
 ---
 
 # 文章归档

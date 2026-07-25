@@ -2,12 +2,10 @@
 import { useData, useRoute } from 'vitepress'
 import { ref, watch, nextTick, onMounted } from 'vue'
 
-// VitePress 提供的响应式数据：isDark 跟踪当前主题
 const { isDark } = useData()
 const route = useRoute()
 const container = ref<HTMLElement | null>(null)
 
-// Giscus 配置（从原 config.ts 的 comment 块迁移）
 const giscusConfig = {
   repo: 'jin1120tai/jin1120tai.github.io',
   repoId: 'R_kgDOTLeaNg',
@@ -22,11 +20,15 @@ const giscusConfig = {
   loading: 'lazy'
 }
 
-// 动态创建 Giscus script 并注入容器
+function isPostPage(path: string): boolean {
+  return path.startsWith('/posts/') &&
+    path !== '/posts/' &&
+    path !== '/posts/index.html'
+}
+
 function loadGiscus() {
   if (typeof window === 'undefined') return
   if (!container.value) return
-  // 清空旧内容，避免页面切换时残留上一篇文章的评论
   container.value.innerHTML = ''
 
   const script = document.createElement('script')
@@ -40,7 +42,6 @@ function loadGiscus() {
   script.setAttribute('data-reactions-enabled', giscusConfig.reactionsEnabled)
   script.setAttribute('data-emit-metadata', giscusConfig.emitMetadata)
   script.setAttribute('data-input-position', giscusConfig.inputPosition)
-  // 根据当前主题选择 light / dark
   script.setAttribute('data-theme', isDark.value ? 'dark' : 'light')
   script.setAttribute('data-lang', giscusConfig.lang)
   script.setAttribute('data-loading', giscusConfig.loading)
@@ -49,7 +50,6 @@ function loadGiscus() {
   container.value.appendChild(script)
 }
 
-// 主题切换时通过 postMessage 通知 Giscus 更新主题（无需重新加载）
 function updateGiscusTheme() {
   if (typeof window === 'undefined') return
   const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame')
@@ -61,15 +61,13 @@ function updateGiscusTheme() {
   }
 }
 
-// 组件挂载后加载评论（onMounted 仅在客户端运行，SSR 安全）
 onMounted(() => {
-  loadGiscus()
+  if (isPostPage(route.path)) loadGiscus()
 })
 
-// 页面切换时：文章页重新加载评论，非文章页清空
 watch(() => route.path, (path) => {
   nextTick(() => {
-    if (path.startsWith('/posts/')) {
+    if (isPostPage(path)) {
       loadGiscus()
     } else if (container.value) {
       container.value.innerHTML = ''
@@ -77,7 +75,6 @@ watch(() => route.path, (path) => {
   })
 })
 
-// 主题切换时：通过 postMessage 更新 Giscus 主题
 watch(isDark, () => {
   updateGiscusTheme()
 })
