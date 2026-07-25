@@ -1,17 +1,52 @@
-/* Hero区域图片尺寸调整 */
-.VPHero .VPImage {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+/* Hero区域图片尺寸调整 - 让图片填满整个右侧红框区域 */
+
+/* 桌面端 (960px+) */
+@media (min-width: 960px) {
+  /* 外层图片区域 - 消除负margin，让它占满右侧列 */
+  .VPHero .image {
+    margin: 0 !important;
+    max-width: none !important;
+    min-height: 100% !important;
+    flex: 1 !important;
+  }
+
+  /* 图片容器 - 取消transform偏移，占满外层 */
+  .VPHero .image-container {
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* 实际图片元素 - 取消VitePress默认的absolute定位和缩放 */
+  .VPHero .image-src {
+    position: static !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* 实际img标签 */
+  .VPHero .image-src img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* 隐藏圆形背景装饰 */
+  .VPHero .image-bg {
+    display: none !important;
+  }
 }
 
-.VPHero .VPImage img {
+/* 移动端也确保图片宽度填满 */
+.VPHero .image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.VPHero .VPImageWrapper {
-  width: 100%;
-  max-width: 100%;
 }
