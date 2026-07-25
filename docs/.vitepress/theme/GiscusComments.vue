@@ -10,9 +10,9 @@ const container = ref<HTMLElement | null>(null)
 // Giscus 配置（从原 config.ts 的 comment 块迁移）
 const giscusConfig = {
   repo: 'jin1120tai/jin1120tai.github.io',
-  repoId: 'R_kgDOKn4a8Q',
-  category: 'Comments',
-  categoryId: 'DIC_kwDOKn4a8c4C0f6k',
+  repoId: 'R_kgDOTLeaNg',
+  category: 'Announcements',
+  categoryId: 'DIC_kwDOTLeaNs4DB7OB',
   mapping: 'pathname',
   strict: '0',
   reactionsEnabled: '1',
