@@ -10,6 +10,8 @@ next: false
 
 ## 2026
 
+- **2026-08-07** — [辅修结束，暑假正式开始](/posts/summer-vacation-begins) · `生活随笔`
+
 - **2026-07-24** — [人工智能辅修过半总结](/posts/ai-minor-semester-summary) · `学习总结`
 
 - **2026-06-30** — [我的第一篇博客](/posts/myFirstBlog) · `课程作业`

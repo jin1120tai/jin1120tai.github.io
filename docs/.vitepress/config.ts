@@ -35,8 +35,9 @@ export default defineConfig({
       {
         text: '文章',
         items: [
-          { text: '我的第一篇博客', link: '/posts/myFirstBlog' },
-          { text: '人工智能辅修过半总结', link: '/posts/ai-minor-semester-summary' }
+          { text: '辅修结束，暑假正式开始', link: '/posts/summer-vacation-begins' },
+          { text: '人工智能辅修过半总结', link: '/posts/ai-minor-semester-summary' },
+          { text: '我的第一篇博客', link: '/posts/myFirstBlog' }
         ]
       }
     ],
